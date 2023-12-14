@@ -22,6 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
+        env:
+          YOURLS_USERNAME: ${{ vars.YOURLS_USERNAME }}
+          YOURLS_PASSWORD: ${{vars.YOURLS_PASSWORD}}
+          YOURLS_SERVER_URL: ${{vars.YOURLS_SERVER_URL}}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
