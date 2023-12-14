@@ -5,9 +5,9 @@ dotenv.config();
 
 test("Should get a unique shorturl without any errors", async () => {
   const response = await getShortLink({
-    username: process.env["YOURLS_USERNAME"]!,
-    password: process.env["YOURLS_PASSWORD"]!,
-    serverUrl: process.env["YOURLS_SERVER_URL"]!,
+    username: process.env["YOURLS_USERNAME"] as string,
+    password: process.env["YOURLS_PASSWORD"] as string,
+    serverUrl: process.env["YOURLS_SERVER_URL"] as string,
     // A uniquely generated url
     url: `https://example-${Date.now()}.com`,
   });
