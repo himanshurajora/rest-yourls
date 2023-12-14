@@ -22,14 +22,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        env:
-          YOURLS_USERNAME: ${{ vars.YOURLS_USERNAME }}
-          YOURLS_PASSWORD: ${{vars.YOURLS_PASSWORD}}
-          YOURLS_SERVER_URL: ${{vars.YOURLS_SERVER_URL}}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - run: touch .env
+      - run: echo YOURLS_USERNAME=${{ secrets.YOURLS_USERNAME }} >> .env
+      - run: echo YOURLS_PASSWORD=${{ secrets.YOURLS_PASSWORD }} >> .env
+      - run: echo YOURLS_SERVER_URL=${{ secrets.YOURLS_SERVER_URL }} >> .env
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
