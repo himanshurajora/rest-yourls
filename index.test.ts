@@ -22,16 +22,16 @@ test("Should try for two requests with same url and should contain error for the
   const url = `https://example-${Date.now()}.com`;
 
   const response1 = await getShortLink({
-    username: process.env["YOURLS_USERNAME"]!,
-    password: process.env["YOURLS_PASSWORD"]!,
-    serverUrl: process.env["YOURLS_SERVER_URL"]!,
+    username: process.env["YOURLS_USERNAME"],
+    password: process.env["YOURLS_PASSWORD"],
+    serverUrl: process.env["YOURLS_SERVER_URL"],
     url,
   });
 
   const response2 = await getShortLink({
-    username: process.env["YOURLS_USERNAME"]!,
-    password: process.env["YOURLS_PASSWORD"]!,
-    serverUrl: process.env["YOURLS_SERVER_URL"]!,
+    username: process.env["YOURLS_USERNAME"],
+    password: process.env["YOURLS_PASSWORD"],
+    serverUrl: process.env["YOURLS_SERVER_URL"],
     url,
   });
 
