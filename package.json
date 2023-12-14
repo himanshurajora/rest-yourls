@@ -1,0 +1,44 @@
+{
+  "name": "rest-yourls",
+  "version": "1.0.0",
+  "description": "Yourls api client",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "concurrently \"tsc --watch\" \"node index.js\"",
+    "build": "tsc",
+    "start": "node index",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshurajora/yourls.git"
+  },
+  "keywords": [
+    "yourls",
+    "yourls-api",
+    "rest-client"
+  ],
+  "author": "Himanshu Jangid @himanshurajora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/himanshurajora/yourls/issues"
+  },
+  "homepage": "https://github.com/himanshurajora/yourls#readme",
+  "dependencies": {
+    "axios": "1.6.2",
+    "xml2js": "0.6.2"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.11",
+    "@types/xml2js": "0.4.14",
+    "concurrently": "8.2.2",
+    "dotenv": "16.3.1",
+    "husky": "8.0.0",
+    "ts-jest": "29.1.1",
+    "typescript": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
